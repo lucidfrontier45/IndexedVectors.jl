@@ -1,5 +1,7 @@
 # IndexedVectors
 
+https://travis-ci.org/lucidfrontier45/IndexedVectors.svg?branch=master
+
 Vectors that can be looked up by the specidied key.
 
 Example
