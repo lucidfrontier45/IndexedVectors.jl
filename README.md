@@ -1,6 +1,6 @@
 # IndexedVectors
 
-[![Build Status](https://travis-ci.org/lucidfrontier45/IndexedVectors.svg?branch=master)](https://travis-ci.org/lucidfrontier45/IndexedVectors)
+[![Build Status](https://travis-ci.org/lucidfrontier45/IndexedVectors.svg?branch=master)](https://travis-ci.org/lucidfrontier45/IndexedVectors) [![Coverage Status](https://coveralls.io/repos/github/lucidfrontier45/IndexedVectors/badge.svg?branch=master)](https://coveralls.io/github/lucidfrontier45/IndexedVectors?branch=master)
 
 Vectors that can be looked up by the specidied key.
 
