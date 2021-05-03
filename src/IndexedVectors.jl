@@ -7,7 +7,19 @@ mutable struct IndexedVector{T, I} <: AbstractVector{T}
     _map::Dict{I, Int}
 end
 
-function IndexedVector(data::AbstractVector, indexer::Function, copydata::Bool)
+"""
+    IndexedVector(data, indexer, copydata=false)
+
+A constructor for IndexedVector.
+
+# Arguments
+
+- `data::AbstractVector`: the actual vector data
+- `indexer::Function`: the indexing function which take an element of the `data` and return its key
+- `copydata::Bool`: flag to specify if copy the `data`
+"""
+
+function IndexedVector(data::AbstractVector, indexer::Function, copydata::Bool=false)
     if copydata
         data = copy(data)
     end
@@ -15,8 +27,6 @@ function IndexedVector(data::AbstractVector, indexer::Function, copydata::Bool)
     _map = Dict(zip(map(indexer, data), 1:n))
     return IndexedVector(data, _map)
 end
-
-IndexedVector(data::AbstractVector, indexer::Function) = IndexedVector(data, indexer, false)
 
 Base.getindex(v::IndexedVector, i::Int) = getindex(v._data, i)
 Base.size(v::IndexedVector) = size(v._data)
