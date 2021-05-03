@@ -26,4 +26,14 @@ function Base.getindex(v::IndexedVector{T, I}, key::I)::T where {T, I}
     return v._data[idx]
 end
 
+function Base.sort!(v::IndexedVector; kws...)
+    sorted_data = sort!(v._data; kws...)
+    return IndexedVector(sorted_data, v._indexer)
+end
+
+function Base.sort(v::IndexedVector; kws...)
+    sorted_data = sort(v._data; kws...)
+    return IndexedVector(sorted_data, v._indexer)
+end
+
 end
