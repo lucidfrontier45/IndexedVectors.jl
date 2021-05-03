@@ -1,6 +1,6 @@
 # IndexedVectors
 
-https://travis-ci.org/lucidfrontier45/IndexedVectors.svg?branch=master
+[![Build Status](https://travis-ci.org/lucidfrontier45/IndexedVectors.svg?branch=master)](https://travis-ci.org/lucidfrontier45/IndexedVectors)
 
 Vectors that can be looked up by the specidied key.
 
