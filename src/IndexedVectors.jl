@@ -5,6 +5,7 @@ export IndexedVector
 mutable struct IndexedVector{T, I} <: AbstractVector{T}
     _data::Vector{T}
     _map::Dict{I, Int}
+    _indexer::Function
 end
 
 """
@@ -25,7 +26,7 @@ function IndexedVector(data::AbstractVector, indexer::Function, copydata::Bool=f
     end
     n = length(data)
     _map = Dict(zip(map(indexer, data), 1:n))
-    return IndexedVector(data, _map)
+    return IndexedVector(data, _map, indexer)
 end
 
 Base.getindex(v::IndexedVector, i::Int) = getindex(v._data, i)
